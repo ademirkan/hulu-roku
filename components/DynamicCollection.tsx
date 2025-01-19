@@ -30,7 +30,7 @@ const DynamicCollection = ({ title, refId }: DynamicCollectionProps) => {
             <div className="flex flex-col gap-2">
                 {items.map((item) => (
                     <div key={item.contentId || item.collectionId}>
-                        dynamic item
+                        {item.contentId || item.collectionId}
                     </div>
                 ))}
             </div>
