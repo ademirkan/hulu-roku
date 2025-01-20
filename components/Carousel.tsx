@@ -8,11 +8,11 @@ export default function Carousel({ imgSrcs }: CarouselProps) {
     if (!imgSrcs || imgSrcs.length === 0) return null;
 
     return (
-        <div className="relative flex left-[calc(var(--padding)*-1)] pl-[var(--padding)] gap-6 overflow-x-auto no-scrollbar p-5 w-[100vw]">
+        <div className="relative flex left-[calc(var(--padding)*-1)] px-[var(--padding)] gap-6  no-scrollbar p-5 w-[calc(100vw-16px)] overflow-x-auto no-scrollbar overscroll-auto">
             {imgSrcs.map((src, index) => (
                 <div
                     key={index}
-                    className="flex-shrink-0 w-80 aspect-[1.78] snap-center hover:cursor-pointer"
+                    className="flex-shrink-0 w-80 aspect-[1.78] hover:cursor-pointer"
                 >
                     <img
                         src={src}
