@@ -8,7 +8,7 @@ export default function Home() {
     console.log(collections);
 
     return (
-        <div>
+        <div className="flex flex-col gap-4">
             {!loading && collections.length > 0 ? (
                 collections.map((collection) =>
                     "items" in collection ? (

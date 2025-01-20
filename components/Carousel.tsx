@@ -1,20 +1,29 @@
+import React from "react";
+
 interface CarouselProps {
     imgSrcs: string[];
 }
 
-const Carousel = ({ imgSrcs }: CarouselProps) => {
-    console.log(imgSrcs);
+export default function Carousel({ imgSrcs }: CarouselProps) {
+    if (!imgSrcs || imgSrcs.length === 0) return null;
+
     return (
-        <div className="flex flex-row gap-4">
+        <div className="overflow-x-auto flex gap-6 p-8 snap-x snap-mandatory no-scrollbar">
             {imgSrcs.map((src, index) => (
-                <img
+                <div
                     key={index}
-                    src={src}
-                    alt={`Carousel image ${index + 1}`}
-                />
+                    className="flex-shrink-0 w-60 aspect-[1.78] snap-center hover:cursor-pointer hover:scale-110"
+                >
+                    <img
+                        src={src}
+                        alt={`Carousel image ${index + 1}`}
+                        className="w-full h-full object-cover shadow-lg shadow-black/50 rounded-[4px]"
+                        onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                        }}
+                    />
+                </div>
             ))}
         </div>
     );
-};
-
-export default Carousel;
+}
