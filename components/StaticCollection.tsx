@@ -2,6 +2,7 @@ import { StaticCollectionProps } from "@/types/Collection";
 import Carousel from "./Carousel";
 
 const StaticCollection = ({ title, items }: StaticCollectionProps) => {
+    console.log(items);
     return (
         <div className="relative flex flex-col overflow-x-visible">
             <h2 className="relative text-xl font-bold z-10">{title}</h2>
