@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { StaticCollectionProps } from "@/types/Collection";
+import StaticCollection from "./StaticCollection";
 
 interface DynamicCollectionProps {
     title: string;
@@ -8,6 +9,7 @@ interface DynamicCollectionProps {
 
 const DynamicCollection = ({ title, refId }: DynamicCollectionProps) => {
     const [items, setItems] = useState<StaticCollectionProps["items"]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
@@ -18,6 +20,7 @@ const DynamicCollection = ({ title, refId }: DynamicCollectionProps) => {
                 const collectionData = await collectionRes.json();
                 const dataKey = Object.keys(collectionData.data)[0];
                 setItems(collectionData.data[dataKey].items);
+                setIsLoading(false);
             } catch (e) {
                 console.error("DynamicCollection fetch error:", e);
             }
@@ -25,16 +28,15 @@ const DynamicCollection = ({ title, refId }: DynamicCollectionProps) => {
     }, [refId]);
 
     return (
-        <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">{title}</h2>
-            <div className="flex flex-col gap-2">
-                {items.map((item) => (
-                    <div key={item.contentId || item.collectionId}>
-                        {item.contentId || item.collectionId}
-                    </div>
-                ))}
-            </div>
-        </div>
+        <>
+            {isLoading ? (
+                <div className="flex flex-col gap-2">
+                    <div>Loading...</div>
+                </div>
+            ) : (
+                <StaticCollection title={title} items={items} />
+            )}
+        </>
     );
 };
 
