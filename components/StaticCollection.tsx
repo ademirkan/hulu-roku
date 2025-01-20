@@ -3,18 +3,16 @@ import Carousel from "./Carousel";
 
 const StaticCollection = ({ title, items }: StaticCollectionProps) => {
     return (
-        <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">{title}</h2>
-            <div className="flex flex-col gap-2">
-                <Carousel
-                    imgSrcs={items.map(
-                        (item) =>
-                            item.image.tile["1.78"][
-                                Object.keys(item.image.tile["1.78"])[0]
-                            ].default.url
-                    )}
-                />
-            </div>
+        <div className="relative flex flex-col overflow-x-visible">
+            <h2 className="relative text-xl font-bold z-10">{title}</h2>
+            <Carousel
+                imgSrcs={items.map(
+                    (item) =>
+                        item.image.tile["1.78"][
+                            Object.keys(item.image.tile["1.78"])[0]
+                        ].default.url
+                )}
+            />
         </div>
     );
 };
