@@ -3,10 +3,6 @@
 import React from "react";
 import styles from "./Carousel.module.css";
 
-interface CarouselProps {
-    imgSrcs: string[];
-}
-
 export default function SkeletonCarousel() {
     return (
         <div className="relative w-[100vw] -ml-[calc((100vw-100%)/2)]">

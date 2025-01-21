@@ -1,5 +1,3 @@
-import { StaticCollectionProps } from "@/types/Collection";
-import Carousel from "./Carousel";
 import SkeletonCarousel from "./SkeletonCarousel";
 
 const SkeletonCollection = () => {
