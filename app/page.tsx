@@ -1,5 +1,6 @@
 import StaticCollection from "../components/StaticCollection";
 import DynamicCollection from "@/components/DynamicCollection";
+import Image from "next/image";
 
 async function fetchCollections() {
     const homeRes = await fetch(
@@ -31,9 +32,10 @@ export default async function Home() {
     const collections = await fetchCollections();
     return (
         <>
-            <div>header</div>
-            <div>hero</div>
-            <div className="flex flex-col gap-8">
+            <header className="fixed top-0 left-0 w-full bg-nav z-20 px-[var(--padding)] py-4">
+                <Image src="/disney.png" alt="logo" width={100} height={100} />
+            </header>
+            <div className="flex flex-col gap-8 pt-32">
                 {collections.length > 0 ? (
                     collections.map((collection: any) =>
                         "items" in collection ? (
