@@ -9,27 +9,28 @@ interface CarouselProps {
 }
 
 export default function Carousel({ imgSrcs }: CarouselProps) {
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const scrollContainerRef = React.useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = React.useState(false);
     const [canScrollRight, setCanScrollRight] = React.useState(false);
 
-    if (!imgSrcs || imgSrcs.length === 0) return null;
-
-    const updateScrollState = () => {
+    const updateScrollState = React.useCallback(() => {
         if (!scrollContainerRef.current) return;
         const { scrollLeft, scrollWidth, clientWidth } =
             scrollContainerRef.current;
         setCanScrollLeft(scrollLeft > 0);
         setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
-    };
+    }, []);
 
-    useEffect(() => {
+    React.useEffect(() => {
+        if (!imgSrcs || imgSrcs.length === 0) return;
         updateScrollState();
         window.addEventListener("resize", updateScrollState);
         return () => {
             window.removeEventListener("resize", updateScrollState);
         };
-    }, [imgSrcs]);
+    }, [imgSrcs, updateScrollState]);
+
+    if (!imgSrcs || imgSrcs.length === 0) return null;
 
     const handleScroll = (direction: "left" | "right") => {
         if (!scrollContainerRef.current) return;
