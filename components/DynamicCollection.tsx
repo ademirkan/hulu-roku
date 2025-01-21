@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { StaticCollectionProps } from "@/types/Collection";
 import StaticCollection from "./StaticCollection";
+import SkeletonCollection from "./SkeletonCollection";
 
 interface DynamicCollectionProps {
     title: string;
@@ -32,9 +33,7 @@ const DynamicCollection = ({ title, refId }: DynamicCollectionProps) => {
     return (
         <>
             {isLoading ? (
-                <div className="flex flex-col gap-2">
-                    <div>Loading...</div>
-                </div>
+                <SkeletonCollection />
             ) : (
                 <StaticCollection title={title} items={items} />
             )}
