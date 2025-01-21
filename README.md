@@ -1,6 +1,6 @@
 # 👋 Thanks for checking out my take-home project!
 
-## 🎬 [https://hulu-roku-arif.vercel.app/](url)
+## 🎬 [Live Demo](https://hulu-roku-arif.vercel.app/)
 
 ## ✅ Features Implemented
 - [x] **Interactable Carousel** – Smooth scrolling and navigation through collections
