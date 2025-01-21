@@ -28,6 +28,7 @@ export default function Carousel({ imgSrcs }: CarouselProps) {
                             src={src}
                             alt={`Carousel image ${index + 1}`}
                             fill
+                            draggable={false}
                             placeholder="empty"
                             priority
                             className="relative object-cover shadow-lg shadow-black rounded-[4px] hover:scale-105 duration-300 ease-out outline outline-[3px] outline-offset-4 outline-transparent hover:outline-white hover:z-10 transition-all"
