@@ -1,6 +1,8 @@
 # 👋 Welcome to My Take-Home Project!
 Live Demo: [https://hulu-roku-arif.vercel.app/](https://hulu-roku-arif.vercel.app/)
 
+<img width="769" alt="image" src="https://github.com/user-attachments/assets/3152c6fe-d396-4d7e-8c49-48e43985929a" />
+
 ---
 
 ## ✅ Features Implemented
