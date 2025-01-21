@@ -60,7 +60,7 @@ export default async function Home() {
                     className="hover:cursor-pointer rounded-full"
                 />
             </header>
-            <div className="flex flex-col gap-8 pt-32">
+            <div className="flex flex-col gap-8 pt-20">
                 {collections.length > 0 ? (
                     collections.map((collection: any) =>
                         "items" in collection ? (
