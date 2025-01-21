@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Carousel.module.css";
-
+import Image from "next/image";
 interface CarouselProps {
     imgSrcs: string[];
 }
@@ -22,12 +22,13 @@ export default function Carousel({ imgSrcs }: CarouselProps) {
                 {imgSrcs.map((src, index) => (
                     <div
                         key={index}
-                        className="flex-shrink-0 w-80 aspect-[1.78] hover:cursor-pointer"
+                        className="relative flex-shrink-0 w-80 aspect-[1.78] hover:cursor-pointer"
                     >
-                        <img
+                        <Image
                             src={src}
                             alt={`Carousel image ${index + 1}`}
-                            className="relative w-full h-full object-cover shadow-lg shadow-black rounded-[4px] hover:scale-105 duration-300 ease-out outline outline-[3px] outline-offset-4 outline-transparent hover:outline-white hover:z-10 transition-all"
+                            fill
+                            className="relative object-cover shadow-lg shadow-black rounded-[4px] hover:scale-105 duration-300 ease-out outline outline-[3px] outline-offset-4 outline-transparent hover:outline-white hover:z-10 transition-all"
                             onError={(e) => {
                                 const container = e.currentTarget.parentElement;
                                 if (container) {
