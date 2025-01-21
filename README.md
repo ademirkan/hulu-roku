@@ -14,12 +14,13 @@ Live Demo: [https://hulu-roku-arif.vercel.app/](https://hulu-roku-arif.vercel.ap
 
 ## ✨ Design Decisions
 1. **Image Error Handling**  
-   In cases where an image fails to load, the associated card is removed entirely. This avoids visual clutter and ensures a cleaner user experience.
+   In cases where an image fails to load, the associated card is removed entirely.
 
 2. **StaticCollection and DynamicCollection Components**  
    To adhere to the **Single Responsibility Principle**, I created two separate components:
-   - **StaticCollection**: Renders handpicked collections directly.
-   - **DynamicCollection**: Fetches API-based collections, displays a skeleton during loading, and then renders the finalized content.
+   - **StaticCollection**: Renders sets without refId (images already populated).
+   - **DynamicCollection**: Fetches set from API, displays a skeleton during loading, and then renders StaticCollection.
+   This centralizes the UI in one component, while encapsulating the fetch / skeleton logic in the other.
 
 3. **Lazy Loading**  
    Images are only rendered when they come into the viewport, improving performance and reducing initial page load time.
