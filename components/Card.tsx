@@ -3,17 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Card({
-    src,
-    alt,
-    width,
-    height,
-}: {
-    src: string;
-    alt: string;
-    width?: number;
-    height?: number;
-}) {
+export default function Card({ src, alt }: { src: string; alt: string }) {
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(false);
 
