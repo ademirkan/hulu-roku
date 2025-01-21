@@ -12,4 +12,19 @@
 ## 🚧 Not Implemented (yet)
 - [ ] **Responsive (Mobile) Design**
 - [ ] **Accessibility (a11y)**
-- [ ] **Modal Component** 
+- [ ] **Modal Component**
+
+## 📦 Run Locally
+```
+# Clone the repository
+git clone git@github.com:ademirkan/hulu-roku.git
+
+# Navigate to the project directory
+cd hulu-roku
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
