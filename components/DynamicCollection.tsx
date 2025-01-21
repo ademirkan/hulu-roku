@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { StaticCollectionProps } from "@/types/Collection";
 import StaticCollection from "./StaticCollection";
