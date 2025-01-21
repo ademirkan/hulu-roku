@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Carousel.module.css";
 import Image from "next/image";
 
@@ -23,10 +23,8 @@ export default function Carousel({ imgSrcs }: CarouselProps) {
         setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
     };
 
-    React.useEffect(() => {
-        // Check initial scroll state after images load
+    useEffect(() => {
         updateScrollState();
-        // Optionally, you could add a resize listener if image widths change:
         window.addEventListener("resize", updateScrollState);
         return () => {
             window.removeEventListener("resize", updateScrollState);
