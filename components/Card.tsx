@@ -28,7 +28,7 @@ export default function Card({ src, alt }: { src: string; alt: string }) {
                 className={`relative object-cover 
                     ${
                         loaded ? "opacity-100" : "opacity-0"
-                    } transition-all duration-300 ease-out`}
+                    } transition-all duration-500 ease-out`}
                 onLoad={() => setLoaded(true)}
                 onError={() => setError(true)}
             />
