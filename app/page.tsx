@@ -41,7 +41,7 @@ export default async function Home() {
                         height={100}
                         draggable={false}
                     />
-                    <nav className="relative top-1 hover:cursor-pointer">
+                    <nav className="relative top-1 hover:cursor-pointer hidden lg:block">
                         <Image
                             draggable={false}
                             src="/navbar.png"
